@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/fma_johnson/static/css/main.c3da1f54.chunk.css",
+    "main.js": "/fma_johnson/static/js/main.f43a4880.chunk.js",
+    "main.js.map": "/fma_johnson/static/js/main.f43a4880.chunk.js.map",
+    "runtime-main.js": "/fma_johnson/static/js/runtime-main.f478c35c.js",
+    "runtime-main.js.map": "/fma_johnson/static/js/runtime-main.f478c35c.js.map",
+    "static/css/2.54208fce.chunk.css": "/fma_johnson/static/css/2.54208fce.chunk.css",
+    "static/js/2.4a11e44f.chunk.js": "/fma_johnson/static/js/2.4a11e44f.chunk.js",
+    "static/js/2.4a11e44f.chunk.js.map": "/fma_johnson/static/js/2.4a11e44f.chunk.js.map",
+    "index.html": "/fma_johnson/index.html",
+    "static/css/2.54208fce.chunk.css.map": "/fma_johnson/static/css/2.54208fce.chunk.css.map",
+    "static/css/main.c3da1f54.chunk.css.map": "/fma_johnson/static/css/main.c3da1f54.chunk.css.map",
+    "static/js/2.4a11e44f.chunk.js.LICENSE.txt": "/fma_johnson/static/js/2.4a11e44f.chunk.js.LICENSE.txt",
+    "static/js/main.f43a4880.chunk.js.LICENSE.txt": "/fma_johnson/static/js/main.f43a4880.chunk.js.LICENSE.txt",
+    "static/media/agenda.png": "/fma_johnson/static/media/agenda.0443e008.png",
+    "static/media/ayo-ogunseinde-2.jpg": "/fma_johnson/static/media/ayo-ogunseinde-2.f4af8f2c.jpg",
+    "static/media/bruno-abatti.jpg": "/fma_johnson/static/media/bruno-abatti.ac5426e5.jpg",
+    "static/media/clem-onojeghuo-2.jpg": "/fma_johnson/static/media/clem-onojeghuo-2.d16702ce.jpg",
+    "static/media/damir-bosnjak.jpg": "/fma_johnson/static/media/damir-bosnjak.efcaca50.jpg",
+    "static/media/daniel-olahs.jpg": "/fma_johnson/static/media/daniel-olahs.fe7b9cc0.jpg",
+    "static/media/david-marcu.jpg": "/fma_johnson/static/media/david-marcu.9f5583c3.jpg",
+    "static/media/erik-lucatero-2.jpg": "/fma_johnson/static/media/erik-lucatero-2.d09715ab.jpg",
+    "static/media/evernote.png": "/fma_johnson/static/media/evernote.e3b22adb.png",
+    "static/media/fabio-mangione.jpg": "/fma_johnson/static/media/fabio-mangione.488bc249.jpg",
+    "static/media/image_placeholder.61b9ec86.jpg": "/fma_johnson/static/media/image_placeholder.61b9ec86.jpg",
+    "static/media/jan-sendereks.jpg": "/fma_johnson/static/media/jan-sendereks.d8540b7e.jpg",
+    "static/media/joe-gardner-2.jpg": "/fma_johnson/static/media/joe-gardner-2.09841708.jpg",
+    "static/media/kaci-baum-2.jpg": "/fma_johnson/static/media/kaci-baum-2.9b929eea.jpg",
+    "static/media/mike.jpg": "/fma_johnson/static/media/mike.d34d0690.jpg",
+    "static/media/paper-dashboard.scss?v=1.3.0": "/fma_johnson/static/media/nucleo-icons.ec16bc4c.woff2",
+    "static/media/olvera.6156c64c.jpg": "/fma_johnson/static/media/olvera.6156c64c.jpg",
+    "static/media/placeholder.59ffd830.jpg": "/fma_johnson/static/media/placeholder.59ffd830.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f478c35c.js",
+    "static/css/2.54208fce.chunk.css",
+    "static/js/2.4a11e44f.chunk.js",
+    "static/css/main.c3da1f54.chunk.css",
+    "static/js/main.f43a4880.chunk.js"
+  ]
+}
