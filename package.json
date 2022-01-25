@@ -4,7 +4,10 @@
   "description": "sistema",
   "main": "index.js",
   "private": true,
+  "homepage":"http://giilperezmeza00.github.io/fma_johnson",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
     "test": "react-scripts test",
@@ -27,12 +30,12 @@
     "reactstrap"
   ],
   "author": "Gilberto Perez",
-  "homepage": "https://fma-johnson.herokuapp.com/",
   "dependencies": {
     "axios": "^0.25.0",
     "bootstrap": "4.6.0",
     "chart.js": "3.2.1",
     "classnames": "2.3.1",
+    "gh-pages": "^3.2.3",
     "match-sorter": "6.3.0",
     "moment": "2.29.1",
     "node-sass": "6.0.0",
