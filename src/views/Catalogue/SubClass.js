@@ -17,11 +17,16 @@ import {
   Row,
   Col,
   CardText, 
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
 } from "reactstrap";
 
 // core components
 import ReactTable from "components/ReactTable/ReactTable.js";
 import ReactBSAlert from "react-bootstrap-sweetalert";
+import Select from "react-select";
 
 /*const dataTable = [
   ["Tiger Nixon", "System Architect", "Edinburgh", "61"],
@@ -68,105 +73,125 @@ import ReactBSAlert from "react-bootstrap-sweetalert";
   ["Olivia Liang", "Support Engineer", "Singapore", "64"],
 ];*/
 
-function ClassProd() {
+function SubClass() {
+    //const [singleSelect, selectOptions] = React.useState(null);
     const [dataCode, setCode] = useState('');
     const [dataName, setName] = useState('');
-    const dataTable = [  
-
+    const [dataClass, setClass] = useState('');
+    const dataTable = [
     ];
 
     const [dataState, setDataState] = useState(
-      dataTable.map((prop, key) => {
-      return {
-          id:  key,
-          code: prop[1],
-          name: prop[2],
-          status: prop[3],
-          actions: (
-          <div className="actions-right">
-              {}
-              <Button
-              onClick={() => {
-                  const obj = dataState.find((o) => o.id === key);
-                  alert(
-                  "Diste click en boton LIKE con \n{ \nID: "+
-                      obj.id_wha +
-                      ", \nCódigo: " +
-                      obj.code +
-                      ", \nnombre: " +
-                      obj.name +
-                      ", \nestatus: " +
-                      obj.status +
-                      "\n}."
-                  );
-              }}
-              className="btn-icon btn-round"
-              color="info"
-              size="sm"
-              >
-              <i className="fa fa-heart" />
-              </Button>{" "}
-              {}
-              <Button
-              onClick={() => {
-                  const obj = dataState.find((o) => o.id === key);
-                  alert(
-                  "Diste click en boton LIKE con \n{ \nID: "+
-                      obj.id +
-                      ", \nCódigo: " +
-                      obj.code +
-                      ", \nnombre: " +
-                      obj.name +
-                      ", \nestatus: " +
-                      obj.status +
-                      "\n}."
-                  );
-              }}
-              className="btn-icon btn-round"
-              color="warning"
-              size="sm"
-              >
-              <i className="fa fa-edit" />
-              </Button>{" "}
-              {}
-              <Button
-              onClick={() => {
-                  var data = dataState;
-                  data.find((o, i) => {
-                  if (o.id === key) {
-                      data.splice(i, 1);
-                      console.log(data);
-                      return true;
-                  }
-                  return false;
-                  });
-                  setDataState(data);
-              }}
-              className="btn-icon btn-round"
-              color="danger"
-              size="sm"
-              >
-              <i className="fa fa-times" />
-              </Button>{" "}
-          </div>
-          ),
-      };
-      })
+        dataTable.map((data, key) => {
+        return {
+            id_wha:  key,
+            code: data[1],
+            name: data[2],
+            status: data[3],
+            actions: (
+            // we've added some custom button actions
+            <div className="actions-right">
+                {/* use this button to add a like kind of action */}
+                <Button
+                onClick={() => {
+                    let obj = dataState.find((o) => o.id === key);
+                    alert(
+                    "Diste click en boton LIKE con \n{ \nID: "+
+                        obj.id_wha +
+                        ", \nCódigo: " +
+                        obj.code +
+                        ", \nnombre: " +
+                        obj.name +
+                        ", \nestatus: " +
+                        obj.status +
+                        "\n}."
+                    );
+                }}
+                className="btn-icon btn-round"
+                color="info"
+                size="sm"
+                >
+                <i className="fa fa-heart" />
+                </Button>{" "}
+                {/* use this button to add a edit kind of action */}
+                <Button
+                onClick={() => {
+                    let obj = dataState.find((o) => o.id === key);
+                    alert(
+                    "Diste click en boton LIKE con \n{ \nID: "+
+                        obj.id +
+                        ", \nCódigo: " +
+                        obj.code +
+                        ", \nnombre: " +
+                        obj.name +
+                        ", \nestatus: " +
+                        obj.status +
+                        "\n}."
+                    );
+                }}
+                className="btn-icon btn-round"
+                color="warning"
+                size="sm"
+                >
+                <i className="fa fa-edit" />
+                </Button>{" "}
+                {/* use this button to remove the data row */}
+                <Button
+                onClick={() => {
+                    var data = dataState;
+                    data.find((o, i) => {
+                    if (o.id === key) {
+                        // here you should add some custom code so you can delete the data
+                        // from this component and from your server as well
+                        data.splice(i, 1);
+                        console.log(data);
+                        return true;
+                    }
+                    return false;
+                    });
+                    setDataState(data);
+                }}
+                className="btn-icon btn-round"
+                color="danger"
+                size="sm"
+                >
+                <i className="fa fa-times" />
+                </Button>{" "}
+            </div>
+            ),
+        };
+        })
     );
+    
+    /*const [singleSelect, selectOptions] = useState(
+        datos.map((data)=>{
+            return {value:data.id, label:data.code}
+        }),
+    );*/
 
     useEffect(() =>{
-      Axios.get("http://localhost:6001/api/showClassProds").then((response) =>{
-          //console.log(response.data[0]);
-          setDataState(response.data);
-      }).catch((err) =>{
-          console.log(err);
-      })
-  }, []);
+        Axios.get("http://localhost:6001/api/showClassProds").then((response) =>{
+            console.log(response);
+            //selectOptions(response.data);
+        }).catch((err) =>{
+            console.log(err);
+        })
+    }, []);
+
+    useEffect(() =>{
+        Axios.get("http://localhost:6001/api/showSubClassProds").then((response) =>{
+            //console.log(response.data[0]);
+            setDataState(response.data);
+        }).catch((err) =>{
+            console.log(err);
+        })
+    }, []);
 
     const submitAdd = () =>{
-        Axios.post('http://localhost:6001/api/addClassProd', {
+        Axios.post('http://localhost:6001/api/addSubClassProd', {
         dataCode:dataCode, 
-        dataName:dataName
+        dataName:dataName,
+        dataClass:dataClass,
         });
 
         setDataState([...dataState,{CODE:dataCode,NAME:dataName,'STATUS':'Activo'}]);
@@ -180,12 +205,12 @@ function ClassProd() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h4">Clases de Producto</CardTitle>
+                <CardTitle tag="h4">Subclases de Producto</CardTitle>
               </CardHeader>
               <CardBody>
                 <Form action="/" method="get">
                     <Row>
-                        <Col sm="6">
+                        <Col sm="4">
                             <label>Código</label>
                             <FormGroup>
                                 <Input placeholder="Código" type="text" id="dataCode" name="dataCode" onChange={(e) =>{
@@ -193,7 +218,7 @@ function ClassProd() {
                                     }} />
                             </FormGroup>
                         </Col>
-                        <Col sm="6">
+                        <Col sm="4">
                             <label>Nombre</label>
                             <FormGroup>
                                 <Input placeholder="Nombre" type="text" id="dataName" name="dataName" onChange={(e) =>{
@@ -202,6 +227,27 @@ function ClassProd() {
                                 />
                             </FormGroup>
                         </Col>
+                        <Col sm="4">
+                        <label>Clase</label>
+                        <Select
+                          className="react-select primary"
+                          classNamePrefix="react-select"
+                          id="dataClass"
+                          name="dataClass"
+                          value={dataClass}
+                          onChange={(value) => setClass(value)}
+                          options={[
+                            {
+                              value: "0",
+                              label: "Sin Clase Seleccionada",
+                              isDisabled: true,
+                            },
+                            { value: "1", label: "Clase 01" },
+                            { value: "2", label: "Clase 02" },
+                          ]}
+                          placeholder="Selecione Una Clase"
+                        />
+                    </Col>
                     </Row>
                 </Form>
               </CardBody>
@@ -222,7 +268,7 @@ function ClassProd() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h4">Tipos de Producto</CardTitle>
+                <CardTitle tag="h4">Subclases de Producto</CardTitle>
               </CardHeader>
               <CardBody>
                 <ReactTable 
@@ -240,14 +286,13 @@ function ClassProd() {
                       Header: "Estatus",
                       accessor: "status",
                     },
-                    {
+                    /*{
                       Header: "Acciones",
                       accessor: "actions",
-                      sortable: false,
-                      filterable: false,
-                    },
+                      sortable: true,
+                      filterable: true,
+                    },*/
                   ]}
-                  className="-striped -highlight primary-pagination"
                 />
               </CardBody>
             </Card>
@@ -258,4 +303,4 @@ function ClassProd() {
   );
 }
 
-export default ClassProd;
+export default SubClass;

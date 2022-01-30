@@ -30,6 +30,9 @@ import CodesSat from "views/Catalogue/Sat.js";
 import Units from "views/Catalogue/Units.js";
 import Types from "views/Catalogue/Types.js";
 import ClassProd from "views/Catalogue/ClassProd.js";
+import SubClass from "views/Catalogue/SubClass.js";
+import Providers from "views/Catalogue/Providers.js";
+import Products from "views/Catalogue/Products.js";
 
 const routes = [
   {
@@ -71,6 +74,27 @@ const routes = [
         name: "Clases de Producto",
         mini: "CP",
         component: ClassProd,
+        layout: "/admin",
+      },
+      {
+        path: "/sub_class",
+        name: "Subclase de Producto",
+        mini: "SP",
+        component: SubClass,
+        layout: "/admin",
+      },
+      {
+        path: "/providers",
+        name: "Proveedores",
+        mini: "PRO",
+        component: Providers,
+        layout: "/admin",
+      },
+      {
+        path: "/products",
+        name: "Productos",
+        mini: "PRO",
+        component: Products,
         layout: "/admin",
       },
     ],
