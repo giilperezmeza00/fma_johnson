@@ -2860,7 +2860,7 @@ function Products() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h4">Subclases de Producto</CardTitle>
+                <CardTitle tag="h4">Productos</CardTitle>
               </CardHeader>
               <CardBody>
                 <ReactTable 
