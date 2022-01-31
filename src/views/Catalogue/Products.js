@@ -75,6 +75,7 @@ import ReactDatetime from "react-datetime";
 ];*/
 
 function Products() {
+
     //const [singleSelect, selectOptions] = React.useState(null);
     const [cve_prod, setcve_prod] = useState('');
     const [c_prds, setc_prds] = useState('');
@@ -100,7 +101,7 @@ function Products() {
     const [cve_monc, setcve_monc] = useState('');
     const [cto_ent, setcto_ent] = useState('');
     const [cve_monp, setcve_monp] = useState('');
-    const [f_act_pre, setf_act_pre] = useState('');
+    const [f_act_pre, setf_act_pre] = useState(new Date());
     const [prec_prod, setprec_prod] = useState('');
     const [prec_prod2, setprec_prod2] = useState('');
     const [prec_prod3, setprec_prod3] = useState('');
@@ -371,7 +372,7 @@ function Products() {
     }, []);
 
     const submitAdd = () =>{
-        Axios.post('http://localhost:6001/api/addProviders', {
+        Axios.post('http://localhost:6001/api/addProducts', {
             cve_prod:cve_prod,
             c_prds:c_prds,
             desc_prod:desc_prod,
@@ -666,7 +667,7 @@ function Products() {
                         options={[
                             {
                             value: "0",
-                            label: "Sin una Clase Seleccionado",
+                            label: "Sin una Clase Seleccionada",
                             isDisabled: true,
                             },
                             { value: "1", label: "Clase 1" },
@@ -972,7 +973,7 @@ function Products() {
                             }}
                             timeFormat={false}
                             id="f_act_pre" name="f_act_pre" onChange={(e) =>{
-                            setf_act_pre(e.target.value)
+                            setf_act_pre(Date)
                             }}
                         />
                         </FormGroup>
@@ -1684,7 +1685,7 @@ function Products() {
                         classNamePrefix="react-select"
                         id="prov5"
                         name="prov5"
-                        value={cve_iva}
+                        value={prov5}
                         onChange={(value) => setprov5(value)}
                         options={[
                             {
@@ -1728,7 +1729,7 @@ function Products() {
                         classNamePrefix="react-select"
                         id="prov7"
                         name="prov7"
-                        value={cve_iva}
+                        value={prov7}
                         onChange={(value) => setprov7(value)}
                         options={[
                             {
