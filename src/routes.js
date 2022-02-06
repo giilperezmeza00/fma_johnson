@@ -33,6 +33,7 @@ import ClassProd from "views/Catalogue/ClassProd.js";
 import SubClass from "views/Catalogue/SubClass.js";
 import Providers from "views/Catalogue/Providers.js";
 import Products from "views/Catalogue/Products.js";
+import Materials from "views/Catalogue/Materials.js";
 import Formulations from "views/Catalogue/Formulations.js";
 
 const routes = [
@@ -96,6 +97,13 @@ const routes = [
         name: "Productos",
         mini: "PRO",
         component: Products,
+        layout: "/admin",
+      },
+      {
+        path: "/materials",
+        name: "Materia Prima",
+        mini: "MA",
+        component: Materials,
         layout: "/admin",
       },
       {
